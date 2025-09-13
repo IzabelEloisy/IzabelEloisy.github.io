@@ -1,129 +1,121 @@
+/* Fontes */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fffaf5;
-  color: #333;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-  background: #5312d4;
-  color: white;
-  text-align: center;
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #5312d4;
+    color: white;
 }
 
-header input {
-  margin: 15px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
+header .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
 }
 
-.filtros {
-  margin: 15px 0;
+header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.filtros button {
-  background: #a0084e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
+header nav a:hover {
+    text-decoration: underline;
 }
 
-.filtros button:hover {
-  background: #ffdf39;
-  color: #333;
+.banner {
+    background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-.filtros .ativo {
-  background: #ffdf39;
-  color: #333;
+.banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 30px;
+.produtos {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.item {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 20px;
-  transition: transform 0.2s;
+.produtos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
 }
 
-.item:hover {
-  transform: scale(1.05);
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.item img {
-  max-width: 100%;
-  border-radius: 10px;
+.produto {
+    border: 1px solid #ddd;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.contato {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contato form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contato input,
+.contato textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contato button {
+    padding: 15px;
+    background-color: #5312d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contato button:hover {
+    background-color: #a0084e;
 }
 
 footer {
-  background: #a0084e;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* ==== MODAL ==== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 80px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
-}
-
-.modal-conteudo {
-  background: white;
-  margin: auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  animation: aparecer 0.3s ease;
-}
-
-.modal-conteudo img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-#fechar {
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #a0084e;
-}
-
-#fechar:hover {
-  color: #5312d4;
-}
-
-@keyframes aparecer {
-  from {opacity: 0; transform: scale(0.8);}
-  to {opacity: 1; transform: scale(1);}
+    text-align: center;
+    padding: 20px;
+    background-color: #5312d4;
+    color: white;
 }
