@@ -2,79 +2,95 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TatyBel Joias</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header class="header">
-    <div class="logo">
-      <img src="images/logo.png" alt="TatyBel">
-    </div>
-    <div class="contatos">
-      <p><i class="fa fa-phone"></i> (61) 99101-0514</p>
-      <p><i class="fab fa-instagram"></i> @tatybel.lima</p>
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/logo.png" alt="TatyBel Logo">
+      </div>
+      <div class="header-contacts">
+        <a href="tel:+5561991010514"><i class="fa fa-phone"></i> (61) 99101-0514</a>
+        <a href="https://instagram.com/tatybel.lima" target="_blank"><i class="fab fa-instagram"></i> @tatybel.lima</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Barra lateral -->
+  <div class="main-content">
     <aside class="sidebar">
-      <div class="search">
+      <div class="search-box">
         <input type="text" placeholder="Digite aqui">
         <button><i class="fa fa-search"></i></button>
       </div>
 
-      <h3>Ordenar por</h3>
-      <ul>
-        <li><input type="radio" name="order"> Novidades</li>
-        <li><input type="radio" name="order"> Menor preço</li>
-        <li><input type="radio" name="order"> Maior preço</li>
-        <li><input type="radio" name="order"> A-Z</li>
-        <li><input type="radio" name="order"> Z-A</li>
-        <li><input type="radio" name="order"> Categoria</li>
-      </ul>
+      <div class="filter-group">
+        <h3>Ordenar por</h3>
+        <label><input type="radio" name="order" checked> Novidades</label>
+        <label><input type="radio" name="order"> Menor preço</label>
+        <label><input type="radio" name="order"> Maior preço</label>
+        <label><input type="radio" name="order"> A-Z</label>
+        <label><input type="radio" name="order"> Z-A</label>
+        <label><input type="radio" name="order"> Categoria</label>
+      </div>
 
-      <h3>Categoria</h3>
-      <button class="btn-categoria">Escolher categoria</button>
+      <div class="filter-group">
+        <h3>Categoria</h3>
+        <button class="btn-category">Escolher categoria</button>
+      </div>
 
-      <h3>Consultoras</h3>
-      <p><i class="fab fa-whatsapp"></i> 5561992182730</p>
-      <p><i class="fab fa-whatsapp"></i> 5561992182730</p>
+      <div class="filter-group">
+        <h3>Consultoras</h3>
+        <p><i class="fab fa-whatsapp"></i> 55 61 99101-0514</p>
+      </div>
     </aside>
 
-    <!-- Produtos -->
-    <section class="produtos">
+    <section class="product-grid">
+      <!-- Exemplo de card -->
       <div class="card">
-        <img src="images/no-image.png" alt="Produto">
-        <h4>ARGOLA 0369P</h4>
-        <p class="preco">R$ 369,90</p>
-        <span>258807</span>
+        <div class="card-image">
+          <img src="images/no-image.png" alt="Produto Sem Imagem">
+        </div>
+        <div class="card-info">
+          <h4>ARGOLA 0369P</h4>
+          <p class="price">R$ 369,90</p>
+          <span class="sku">258807</span>
+        </div>
       </div>
 
       <div class="card">
-        <img src="imagens/anelregulavel.jpeg" alt="Produto">
-        <h4>BRINCO CORAÇÃO CRAVEJADO 069PB</h4>
-        <p class="preco">R$ 69,90</p>
-        <span>258524</span>
+        <div class="card-image">
+          <img src="images/brinco1.jpg" alt="Brinco Coração Cravejado">
+        </div>
+        <div class="card-info">
+          <h4>BRINCO CORAÇÃO CRAVEJADO 069PB</h4>
+          <p class="price">R$ 69,90</p>
+          <span class="sku">258524</span>
+        </div>
       </div>
 
       <div class="card">
-        <img src="images/argola.jpg" alt="Produto">
-        <h4>ARGOLA P CRAVEJADA 004PB</h4>
-        <p class="preco">R$ 49,90</p>
-        <span>258401</span>
+        <div class="card-image">
+          <img src="images/argola.jpg" alt="Argola Pequena Cravejada">
+        </div>
+        <div class="card-info">
+          <h4>ARGOLA P CRAVEJADA 004PB</h4>
+          <p class="price">R$ 49,90</p>
+          <span class="sku">258401</span>
+        </div>
       </div>
 
-      <!-- Repita os outros produtos... -->
+      <!-- Repetir outros cards conforme necessário -->
     </section>
-  </main>
+  </div>
 
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5561992182730" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/5561991010514" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+
 </body>
 </html>
