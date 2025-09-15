@@ -3,147 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tatybel Joias</title>
-
-  <!-- Fonte Autumn Embrace -->
-  <link href="https://fonts.cdnfonts.com/css/autumn-embrace" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fff;
-      color: #333;
-    }
-
-    /* Container centralizado */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    /* Cabeçalho */
-    header {
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    header img {
-      max-height: 80px;
-    }
-
-    header h1 {
-      font-family: 'Autumn Embrace', cursive;
-      font-size: 2.5rem;
-      color: #ff65c3;
-      margin: 0.5rem 0 0;
-    }
-
-    /* Filtro */
-    .filtro {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .filtro input,
-    .filtro select {
-      padding: 0.6rem 1rem;
-      border: 2px solid #ff65c3;
-      border-radius: 8px;
-      font-size: 1rem;
-      outline: none;
-      transition: 0.2s ease;
-    }
-
-    .filtro input:focus,
-    .filtro select:focus {
-      border-color: #ff65c3;
-      box-shadow: 0 0 6px rgba(255, 101, 195, 0.4);
-    }
-
-    /* Lista de itens */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .item {
-      background: #fff;
-      border: 2px solid #ff65c3;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(255, 101, 195, 0.25);
-    }
-
-    .item img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-    }
-
-    .item h3 {
-      margin: 0.5rem 0;
-      font-family: 'Autumn Embrace', cursive;
-      font-size: 1.5rem;
-      color: #ff65c3;
-    }
-
-    .item p {
-      color: #555;
-      font-size: 1rem;
-    }
-  </style>
+  <title>TatyBel Joias</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Nome/Logo -->
-    <header>
-      <img src="logo.png" alt="Tatybel Joias">
-      <h1>Tatybel Joias</h1>
-    </header>
-
-    <!-- Filtro -->
-    <div class="filtro">
-      <input type="text" placeholder="Buscar produto...">
-      <select>
-        <option>Todos</option>
-        <option>Anéis</option>
-        <option>Colares</option>
-        <option>Pulseiras</option>
-      </select>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="TatyBel">
     </div>
-
-    <!-- Itens -->
-    <div class="grid">
-      <div class="item">
-        <img src="WhatsApp Image 2025-09-13 at 17.20.15.jpeg" alt="Anel">
-        <h3>Anel de Ouro</h3>
-        <p>R$ 250,00</p>
-      </div>
-      <div class="item">
-        <img src="colar.jpg" alt="Colar">
-        <h3>Colar de Pérolas</h3>
-        <p>R$ 400,00</p>
-      </div>
-      <div class="item">
-        <img src="pulseira.jpg" alt="Pulseira">
-        <h3>Pulseira Prateada</h3>
-        <p>R$ 150,00</p>
-      </div>
+    <div class="contatos">
+      <p><i class="fa fa-phone"></i> (61) 99101-0514</p>
+      <p><i class="fab fa-instagram"></i> @tatybel.lima</p>
     </div>
-  </div>
+  </header>
+
+  <main>
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <div class="search">
+        <input type="text" placeholder="Digite aqui">
+        <button><i class="fa fa-search"></i></button>
+      </div>
+
+      <h3>Ordenar por</h3>
+      <ul>
+        <li><input type="radio" name="order"> Novidades</li>
+        <li><input type="radio" name="order"> Menor preço</li>
+        <li><input type="radio" name="order"> Maior preço</li>
+        <li><input type="radio" name="order"> A-Z</li>
+        <li><input type="radio" name="order"> Z-A</li>
+        <li><input type="radio" name="order"> Categoria</li>
+      </ul>
+
+      <h3>Categoria</h3>
+      <button class="btn-categoria">Escolher categoria</button>
+
+      <h3>Consultoras</h3>
+      <p><i class="fab fa-whatsapp"></i> 5561992182730</p>
+      <p><i class="fab fa-whatsapp"></i> 5561992182730</p>
+    </aside>
+
+    <!-- Produtos -->
+    <section class="produtos">
+      <div class="card">
+        <img src="images/no-image.png" alt="Produto">
+        <h4>ARGOLA 0369P</h4>
+        <p class="preco">R$ 369,90</p>
+        <span>258807</span>
+      </div>
+
+      <div class="card">
+        <img src="imagens/anelregulavel.jpeg" alt="Produto">
+        <h4>BRINCO CORAÇÃO CRAVEJADO 069PB</h4>
+        <p class="preco">R$ 69,90</p>
+        <span>258524</span>
+      </div>
+
+      <div class="card">
+        <img src="images/argola.jpg" alt="Produto">
+        <h4>ARGOLA P CRAVEJADA 004PB</h4>
+        <p class="preco">R$ 49,90</p>
+        <span>258401</span>
+      </div>
+
+      <!-- Repita os outros produtos... -->
+    </section>
+  </main>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5561992182730" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>
