@@ -13,60 +13,29 @@
   <!-- Fonte personalizada -->
   <link href="https://fonts.googleapis.com/css2?family=Autumn+Embrace&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      background-color: #ff65c3;
-      color: white;
-    }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 10px 0;
-    }
-    header .logo img {
-      height: 70px;
-    }
-    .sidebar {
-      background-color: #ffe6f3;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .card img {
-      max-height: 160px;
-      object-fit: contain;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 24px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      z-index: 100;
-    }
-    .card {
-      transition: transform 0.3s;
-      font-family: 'Autumn Embrace', cursive;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    h5 {
-      font-family: 'Autumn Embrace', cursive;
-    }
-    .form-check-label {
-      cursor: pointer;
-    }
+    body { background-color: #fff; font-family: Arial, sans-serif; }
+    header { background-color: #ff65c3; color: white; }
+    header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 0; }
+    header .logo img { height: 70px; }
+    .sidebar { background-color: #ffe6f3; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+    .card img { max-height: 160px; object-fit: contain; cursor: pointer; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; border-radius: 50%; padding: 15px; font-size: 24px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 100; }
+    .card { transition: transform 0.3s; font-family: 'Autumn Embrace', cursive; }
+    .card:hover { transform: scale(1.05); }
+    h5 { font-family: 'Autumn Embrace', cursive; }
+    .form-check-label { cursor: pointer; }
+
+    /* Modal customizado */
+    .modal-lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1050; }
+    .modal-lightbox.show { display: flex; }
+    .modal-content-box { background: #fff; border-radius: 10px; max-width: 900px; width: 95%; padding: 20px; position: relative; text-align: center; }
+    .modal-content-box img { max-height: 400px; object-fit: contain; }
+    .modal-close { position: absolute; top: 10px; right: 15px; background: transparent; border: none; font-size: 28px; cursor: pointer; }
+    .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; font-size: 24px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .modal-prev { left: 10px; }
+    .modal-next { right: 10px; }
+    .btn-whatsapp { display: inline-block; margin-top: 10px; background: #25d366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+    .btn-whatsapp:hover { background: #1ebe5d; color: #fff; }
   </style>
 </head>
 <body>
@@ -133,7 +102,13 @@
           <!-- Card Produto -->
           <div class="col-6 col-md-4 col-lg-3 produto pulseira">
             <div class="card h-100 text-center">
-              <img src="imagens/pulseirab.jpeg" class="card-img-top" alt="Pulseira">
+              <img src="imagens/pulseirab.jpeg" 
+                   class="card-img-top product-image"
+                   alt="Pulseira Borboleta"
+                   data-title="Pulseira Borboleta"
+                   data-price="R$ 49,90"
+                   data-code="Prata 925"
+                   data-gallery="imagens/pulseirab.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Pulseira Borboleta</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -142,9 +117,15 @@
             </div>
           </div>
 
+          <!-- Repita o mesmo padrão nos outros produtos -->
           <div class="col-6 col-md-4 col-lg-3 produto pulseira">
             <div class="card h-100 text-center">
-              <img src="imagens/pulseirat.jpeg" class="card-img-top" alt="Pulseira">
+              <img src="imagens/pulseirat.jpeg" class="card-img-top product-image"
+                   alt="Pulseira Cruz"
+                   data-title="Pulseira Cruz"
+                   data-price="R$ 49,90"
+                   data-code="Prata 925"
+                   data-gallery="imagens/pulseirat.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Pulseira Cruz</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -155,7 +136,12 @@
 
           <div class="col-6 col-md-4 col-lg-3 produto brinco">
             <div class="card h-100 text-center">
-              <img src="imagens/brincob.jpeg" class="card-img-top" alt="Brinco">
+              <img src="imagens/brincob.jpeg" class="card-img-top product-image"
+                   alt="Brinco Borboleta"
+                   data-title="Brinco Borboleta"
+                   data-price="R$ 69,90"
+                   data-code="Semijoia"
+                   data-gallery="imagens/brincob.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Brinco Borboleta</h6>
                 <p class="fw-bold">R$ 69,90</p>
@@ -166,7 +152,12 @@
 
           <div class="col-6 col-md-4 col-lg-3 produto anel">
             <div class="card h-100 text-center">
-              <img src="imagens/anelregulavel.jpeg" class="card-img-top" alt="Anel">
+              <img src="imagens/anelregulavel.jpeg" class="card-img-top product-image"
+                   alt="Anel Regulável"
+                   data-title="Anel Regulável"
+                   data-price="R$ 49,90"
+                   data-code="Prata 925"
+                   data-gallery="imagens/anelregulavel.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Anel Regulável</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -177,7 +168,12 @@
 
           <div class="col-6 col-md-4 col-lg-3 produto colar">
             <div class="card h-100 text-center">
-              <img src="imagens/colar.jpeg" class="card-img-top" alt="Colar">
+              <img src="imagens/colar.jpeg" class="card-img-top product-image"
+                   alt="Colar"
+                   data-title="Colar"
+                   data-price="R$ 49,90"
+                   data-code="Prata 925"
+                   data-gallery="imagens/colar.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Colar</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -188,7 +184,12 @@
 
           <div class="col-6 col-md-4 col-lg-3 produto colar">
             <div class="card h-100 text-center">
-              <img src="imagens/colarm.jpeg" class="card-img-top" alt="Colar">
+              <img src="imagens/colarm.jpeg" class="card-img-top product-image"
+                   alt="Colar"
+                   data-title="Colar"
+                   data-price="R$ 49,90"
+                   data-code="Prata 925"
+                   data-gallery="imagens/colarm.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Colar</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -196,8 +197,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Adicione mais produtos aqui, sempre com a classe correta -->
 
         </div>
       </section>
@@ -209,13 +208,88 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Script de filtro jQuery -->
+  <!-- Modal de imagem -->
+  <div class="modal-lightbox" id="modalLightbox" aria-hidden="true">
+    <div class="modal-content-box">
+      <button class="modal-close">&times;</button>
+      <button class="modal-nav modal-prev"><i class="fa fa-chevron-left"></i></button>
+      <img id="modalImg" src="" alt="">
+      <button class="modal-nav modal-next"><i class="fa fa-chevron-right"></i></button>
+      <h5 id="modalTitle" class="mt-3"></h5>
+      <p id="modalPrice" class="fw-bold"></p>
+      <p id="modalCode" class="text-muted"></p>
+      <a id="modalWhatsapp" href="#" target="_blank" class="btn-whatsapp">Comprar / WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Script de filtro -->
   <script>
     $(document).ready(function() {
       $('.filtro').on('change', function() {
         var categoria = $(this).data('categoria');
-        $('.produto').hide(); // esconde todos
-        $('.produto.' + categoria).fadeIn(); // mostra só os da categoria
+        $('.produto').hide();
+        $('.produto.' + categoria).fadeIn();
+      });
+    });
+  </script>
+
+  <!-- Script do modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const modal = document.getElementById('modalLightbox');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalCode = document.getElementById('modalCode');
+      const modalWhatsapp = document.getElementById('modalWhatsapp');
+      const prevBtn = document.querySelector('.modal-prev');
+      const nextBtn = document.querySelector('.modal-next');
+      const closeBtn = document.querySelector('.modal-close');
+
+      let gallery = [];
+      let currentIndex = 0;
+
+      document.querySelectorAll('.product-image').forEach(img => {
+        img.addEventListener('click', () => {
+          const galleryData = img.dataset.gallery ? img.dataset.gallery.split(',') : [img.src];
+          gallery = galleryData.map(i => i.trim());
+          currentIndex = 0;
+          showImage();
+
+          modalTitle.textContent = img.dataset.title || '';
+          modalPrice.textContent = img.dataset.price || '';
+          modalCode.textContent = img.dataset.code || '';
+          const phone = '5561992926863';
+          const text = encodeURIComponent(`${img.dataset.title} - ${img.dataset.price} (${img.dataset.code})`);
+          modalWhatsapp.href = `https://wa.me/${phone}?text=${text}`;
+          modal.classList.add('show');
+        });
+      });
+
+      function showImage() {
+        modalImg.src = gallery[currentIndex];
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+        showImage();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % gallery.length;
+        showImage();
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if(e.target === modal) modal.classList.remove('show');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') modal.classList.remove('show');
       });
     });
   </script>
