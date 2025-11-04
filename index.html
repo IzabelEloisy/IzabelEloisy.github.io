@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TatyBel Joias</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,11 +31,16 @@
     .modal-content-box { background: #fff; border-radius: 10px; max-width: 900px; width: 95%; padding: 20px; position: relative; text-align: center; }
     .modal-content-box img { max-height: 400px; object-fit: contain; }
     .modal-close { position: absolute; top: 10px; right: 15px; background: transparent; border: none; font-size: 28px; cursor: pointer; }
-    .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; font-size: 24px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; font-size: 24px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display:flex; align-items:center; justify-content:center; }
     .modal-prev { left: 10px; }
     .modal-next { right: 10px; }
     .btn-whatsapp { display: inline-block; margin-top: 10px; background: #25d366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
     .btn-whatsapp:hover { background: #1ebe5d; color: #fff; }
+
+    @media (max-width:600px){
+      .modal-content-box img { max-height: 280px; }
+      .modal-nav { width: 36px; height: 36px; font-size: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -47,6 +52,7 @@
         <img src="logotatybel.png" alt="TatyBel Logo">
       </div>
       <div>
+        <!-- visualmente mantive com parênteses como você pediu -->
         <p class="mb-1"><i class="fa fa-phone"></i> (61) 99101-0514</p>
         <p class="mb-0"><i class="fab fa-instagram"></i> @tatybel.lima</p>
       </div>
@@ -108,7 +114,7 @@
                    data-title="Pulseira Borboleta"
                    data-price="R$ 49,90"
                    data-code="Prata 925"
-                   data-gallery="imagens/pulseirab.jpeg,trio1.jpeg">
+                   data-gallery="imagens/pulseirab.jpeg,imagens/trio1.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Pulseira Borboleta</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -125,7 +131,7 @@
                    data-title="Pulseira Cruz"
                    data-price="R$ 49,90"
                    data-code="Prata 925"
-                   data-gallery="imagens/pulseirat.jpeg">
+                   data-gallery="imagens/pulseirat.jpeg,imagens/pulseirat-2.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Pulseira Cruz</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -141,7 +147,7 @@
                    data-title="Brinco Borboleta"
                    data-price="R$ 69,90"
                    data-code="Semijoia"
-                   data-gallery="imagens/brincob.jpeg">
+                   data-gallery="imagens/brincob.jpeg,imagens/brincob-2.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Brinco Borboleta</h6>
                 <p class="fw-bold">R$ 69,90</p>
@@ -173,7 +179,7 @@
                    data-title="Colar"
                    data-price="R$ 49,90"
                    data-code="Prata 925"
-                   data-gallery="imagens/colar.jpeg">
+                   data-gallery="imagens/colar.jpeg,imagens/colar-2.jpeg">
               <div class="card-body">
                 <h6 class="card-title">Colar</h6>
                 <p class="fw-bold">R$ 49,90</p>
@@ -203,22 +209,22 @@
     </div>
   </div>
 
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5561991010514" class="whatsapp-float" target="_blank">
+  <!-- Botão flutuante WhatsApp (padronizado) -->
+  <a href="https://wa.me/5561991010514" class="whatsapp-float" target="_blank" rel="noopener">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- Modal de imagem -->
   <div class="modal-lightbox" id="modalLightbox" aria-hidden="true">
-    <div class="modal-content-box">
-      <button class="modal-close">&times;</button>
-      <button class="modal-nav modal-prev"><i class="fa fa-chevron-left"></i></button>
+    <div class="modal-content-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" aria-label="Fechar">&times;</button>
+      <button class="modal-nav modal-prev" aria-label="Imagem anterior"><i class="fa fa-chevron-left"></i></button>
       <img id="modalImg" src="" alt="">
-      <button class="modal-nav modal-next"><i class="fa fa-chevron-right"></i></button>
+      <button class="modal-nav modal-next" aria-label="Próxima imagem"><i class="fa fa-chevron-right"></i></button>
       <h5 id="modalTitle" class="mt-3"></h5>
       <p id="modalPrice" class="fw-bold"></p>
       <p id="modalCode" class="text-muted"></p>
-      <a id="modalWhatsapp" href="#" target="_blank" class="btn-whatsapp">Comprar / WhatsApp</a>
+      <a id="modalWhatsapp" href="#" target="_blank" rel="noopener" class="btn-whatsapp">Comprar / WhatsApp</a>
     </div>
   </div>
 
@@ -233,7 +239,7 @@
     });
   </script>
 
-  <!-- Script do modal -->
+  <!-- Script do modal (envia a PRIMEIRA imagem da galeria no texto do WhatsApp) -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const modal = document.getElementById('modalLightbox');
@@ -246,50 +252,75 @@
       const nextBtn = document.querySelector('.modal-next');
       const closeBtn = document.querySelector('.modal-close');
 
+      // Número final padronizado (sem formatação)
+      const PHONE = '5561991010514';
+
       let gallery = [];
       let currentIndex = 0;
 
+      // Função para mostrar imagem atual
+      function showImage() {
+        modalImg.src = gallery[currentIndex] || '';
+      }
+
+      // Ao clicar em qualquer imagem de produto
       document.querySelectorAll('.product-image').forEach(img => {
         img.addEventListener('click', () => {
+          // monta galeria a partir do atributo data-gallery (valores relativos)
           const galleryData = img.dataset.gallery ? img.dataset.gallery.split(',') : [img.src];
-          gallery = galleryData.map(i => i.trim());
+          gallery = galleryData.map(i => i.trim()).map(path => {
+            // se o usuário passeu só "nome.jpg" garantimos caminho relativo em /imagens/
+            // porém você já seguiu o padrão "imagens/..." — esta linha apenas evita 404 caso
+            if (!path.startsWith('http') && !path.startsWith('/') && !path.startsWith('imagens/')) {
+              return 'imagens/' + path;
+            }
+            return path;
+          });
+
           currentIndex = 0;
           showImage();
 
+          // preencher detalhes
           modalTitle.textContent = img.dataset.title || '';
           modalPrice.textContent = img.dataset.price || '';
           modalCode.textContent = img.dataset.code || '';
-          const phone = '5561992926863';
-          const text = encodeURIComponent(`${img.dataset.title} - ${img.dataset.price} (${img.dataset.code})`);
-          modalWhatsapp.href = `https://wa.me/${phone}?text=${text}`;
+
+          // MANDAR A PRIMEIRA IMAGEM DA GALERIA (gallery[0]) dentro do texto do WhatsApp
+          const firstImage = gallery[0] || img.src;
+          const text = `Olá! Gostei deste produto:\n${img.dataset.title || ''}\nPreço: ${img.dataset.price || ''}\nMaterial: ${img.dataset.code || ''}\nImagem: ${firstImage}`;
+          modalWhatsapp.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+
+          // abre modal
           modal.classList.add('show');
         });
       });
 
-      function showImage() {
-        modalImg.src = gallery[currentIndex];
-      }
-
+      // navegação prev/next (apenas altera a imagem mostrada)
       prevBtn.addEventListener('click', () => {
+        if (!gallery.length) return;
         currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
         showImage();
       });
 
       nextBtn.addEventListener('click', () => {
+        if (!gallery.length) return;
         currentIndex = (currentIndex + 1) % gallery.length;
         showImage();
       });
 
+      // fechar modal
       closeBtn.addEventListener('click', () => {
         modal.classList.remove('show');
       });
 
+      // fechar clicando fora do conteúdo
       modal.addEventListener('click', (e) => {
-        if(e.target === modal) modal.classList.remove('show');
+        if (e.target === modal) modal.classList.remove('show');
       });
 
+      // ESC fecha
       document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') modal.classList.remove('show');
+        if (e.key === 'Escape') modal.classList.remove('show');
       });
     });
   </script>
