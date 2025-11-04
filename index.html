@@ -233,7 +233,7 @@
 
       function updateWhatsapp(){
         const currentImage = gallery[currentIndex] || modalImg.src;
-        const text = `Gostei dessa peça! 💖\n\n${modalTitle.textContent}\n${modalPrice.textContent}\n${modalCode.textContent}\n\nImagem: ${currentImage}`;
+        const text = `Peça ainda disponível?\n\n${modalTitle.textContent}\n${modalPrice.textContent}\n${modalCode.textContent}\n\nImagem: ${currentImage}`;
         modalWhatsapp.href = `https://wa.me/5561991010514?text=${encodeURIComponent(text)}`;
       }
 
